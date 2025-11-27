@@ -1,0 +1,10 @@
+  <% if (errors && errors.length > 0) { %>
+          <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+            <p class="font-bold mb-2">Errors:</p>
+            <ul class="list-disc ml-6">
+              <% errors.forEach(function(err) { %>
+                <li><%= err %></li>
+              <% }); %>
+            </ul>
+          </div>
+        <% } %>

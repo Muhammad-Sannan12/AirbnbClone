@@ -1,0 +1,11 @@
+<div>
+  <form action="/store/favourite_list" method="post">
+    <button
+      type="submit"
+      class="bg-red-500 mt-3 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+    >
+      Add to favourites
+    </button>
+    <input type="hidden" name="id" value="<%= home._id %>" />
+  </form>
+</div>
