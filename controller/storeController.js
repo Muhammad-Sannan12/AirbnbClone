@@ -2,7 +2,7 @@ const Home = require("../model/home");
 const User = require("../model/user");
 exports.getHomes = (req, res, next) => {
   Home.find().then((registeredHomes) => {
-    res.render("./store/home_list", {
+    res.render("store/home_list", {
       registeredHomes: registeredHomes,
       PageTitle: "Homes List",
       currentPage: "home_list",
@@ -14,7 +14,7 @@ exports.getHomes = (req, res, next) => {
 };
 exports.getIndex = (req, res, next) => {
   Home.find().then((registeredHomes) => {
-    res.render("./store/index", {
+    res.render("store/index", {
       registeredHomes: registeredHomes,
       PageTitle: "Welcome index",
       currentPage: "index",
@@ -24,7 +24,7 @@ exports.getIndex = (req, res, next) => {
   });
 };
 exports.getBookings = (req, res, next) => {
-  res.render("./store/bookings", {
+  res.render("store/bookings", {
     PageTitle: "Bookings",
     currentPage: "bookings",
     isLoggedIn: req.isLoggedIn,
@@ -35,7 +35,7 @@ exports.getBookings = (req, res, next) => {
 exports.getFavourite = async (req, res, next) => {
   const userId = req.session.user._id;
   const user = await User.findById(userId).populate("favourite");
-  res.render("./store/favourite_list ", {
+  res.render("store/favourite_list", {
     favourites: user.favourite,
     PageTitle: "My Favourite",
     currentPage: "favourite",
@@ -57,7 +57,7 @@ exports.postAddToFavourite = async (req, res, next) => {
 exports.getHomeDetails = (req, res, next) => {
   const homeId = req.params.homeId;
   Home.findById(homeId).then((home) => {
-    res.render("./store/home_detail", {
+    res.render("store/home_detail", {
       home: home,
       PageTitle: "Home Details",
       isLoggedIn: req.isLoggedIn,
