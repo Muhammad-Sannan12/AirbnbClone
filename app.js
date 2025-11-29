@@ -15,7 +15,7 @@ const errorController = require("./controller/error");
 const { default: mongoose } = require("mongoose");
 
 app.set("view engine", "ejs");
-app.set("views", "views");
+app.set("views", path.join(rootdir, "views"));
 app.use(express.urlencoded());
 
 const storage = multer.diskStorage({
