@@ -34,17 +34,12 @@
           placeholder="Enter your Price per Night"
           class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
         /><input
-          type="file"
+          type="text"
           name="photo"
-          accept="image/png, image/jpeg,image/jpg"
+                    value="<%=editing  ? home.photo : ''  %>"
           class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
         />
-        <input
-          type="file"
-          name="pdf"
-          accept="application/pdf"
-          class="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-        />
+     
         
         <textarea
           rows="4"
