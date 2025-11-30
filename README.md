@@ -1,1 +1,1 @@
-# AirbnbClone
+# HomiRento

@@ -1,15 +1,14 @@
 <header class="bg-red-500 text-white p-4 shadow-md">
   <nav class="container mx-auto flex justify-between items-center">
     <ul class="flex space-x-4">
-          <li>
+      <li>
         <a
           href="/store/index"
           class="<%= currentPage === 'index' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >airbnb</a
+          >Home</a
         >
       </li>
-      <% if(isLoggedIn)  { %>
-      <% if(user && user.userType ==='guest')  { %>
+      <% if(isLoggedIn) { %> <% if(user && user.userType ==='guest') { %>
 
       <li>
         <a
@@ -18,61 +17,67 @@
           >Homes-List</a
         >
       </li>
-     
-       <li>
+
+      <li>
         <a
           href="/store/bookings"
           class="<%= currentPage === 'bookings'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
           >Bookings</a
         >
       </li>
-        <li>
+      <li>
         <a
           href="/store/favourite_list"
           class="<%= currentPage === 'favourite'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
           >Favourite</a
         >
-      </li>   <li>
-        <form action="/logout" method="post"> <button
+      </li>
+      <li>
+        <form action="/logout" method="post">
+          <button
             type="submit"
-          class="<%= currentPage === 'logout'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
-          >Logout</button></form 
-        >
+            class="<%= currentPage === 'logout'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
+          >
+            Logout
+          </button>
+        </form>
       </li>
       <% } else {%>
-       <li>
+      <li>
         <a
           href="/host/edit_home"
           class="<%= currentPage === 'add_home'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
           >Add Home</a
         >
       </li>
-       <li>
+      <li>
         <a
           href="/host/host_home_list"
           class="<%= currentPage === 'host_home_list'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
           >Host Homes</a
         >
       </li>
-      
-         <li>
-        <form action="/logout" method="post"> <button
+
+      <li>
+        <form action="/logout" method="post">
+          <button
             type="submit"
-          class="<%= currentPage === 'logout'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
-          >Logout</button></form 
-        >
+            class="<%= currentPage === 'logout'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
+          >
+            Logout
+          </button>
+        </form>
       </li>
-      <% } %>
-        <% } else {%>
-        
-         <li>
+      <% } %> <% } else {%>
+
+      <li>
         <a
           href="/signup"
           class="<%= currentPage === 'signup'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
           >SignUp</a
         >
-      </li> 
-         <li>
+      </li>
+      <li>
         <a
           href="/login"
           class="<%= currentPage === 'login'? 'bg-red-400' : 'hover:bg-red-400' %> hover:bg-red-400 py-2 px-4 rounded transition duration-300"
